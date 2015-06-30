@@ -496,6 +496,8 @@ class SaleRental(models.Model):
         ('in', 'Back In'),
         ], string='State', compute='_compute_procurement_and_move',
         readonly=True)
+    infinite = fields.Boolean(string='Create rental extensions until received',
+                              default=False)
 
 
 class StockWarehouse(models.Model):
