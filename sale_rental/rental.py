@@ -67,6 +67,11 @@ class ProductProduct(models.Model):
 
 class SaleOrder(models.Model):
     _inherit = 'sale.order'
+    
+    @api.model
+    def create_extension(self, rental, until, ):
+        ''' Extend rental until datetime '''
+        order_line = self.pool['sale.order.line']
 
     @api.model
     def _get_rental_date_planned(self, line):
